@@ -3,29 +3,10 @@
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <title>Lynx</title>
-  <style>
-    .chat, .chat:active {
-      background-color: #000;
-      color: #00ff00;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    .black {
-      background-color: #000;
-      color: #00ff00;
-      font-family: Courier;
-    }
-
-    .waiting {
-      font-size: 10px;
-    }
-  </style>
 </head>
 <body class="black">
   <p>$~Lynx: v1.0.0-alpha</p>
-  <p class="waiting" id="lynxStatus">Awating Response<span id="waitingDisplay"></span></p>
+  <p class="waiting" id="lynxStatus">$-Lynx: Press ENTER to submit responses<br/>$~Lynx: <span id="waitingDisplay">Awaiting Response</span></p>
   <form>
     <textarea class="chat" placeholder="Lynx: Awaiting Response..." id="chat"></textarea>
     <input type="reset" id="reset" hidden/>
