@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <title>Lynx</title>
+  <link rel="stylesheet" type="text/css" href="main.css"/>
+</head>
+<body class="black">
+  <p>$~Lynx: v1.0.0-alpha</p>
+  <p class="waiting" id="lynxStatus">$-Lynx: Press ENTER to submit responses<br/>$~Lynx: <span id="waitingDisplay">Awaiting Response</span></p>
+  <form>
+    <textarea class="chat" placeholder="Lynx: Awaiting Response..." id="chat"></textarea>
+    <input type="reset" id="reset" hidden/>
+  </form>
+  <script src="bot.js"></script>
+</body>
+</html>
