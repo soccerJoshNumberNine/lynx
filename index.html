@@ -4,13 +4,20 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="commands.js"></script>
   <link rel="stylesheet" type="text/css" href="main.css"/>
-  <title>Lynx: Increase Productivity</title>
+  <title>Lynx</title>
 </head>
 <body>
-  <p id="welcome">$~Lynx: Awaiting Instruction</p>
+  <p id="welcome">$~Lynx v1.0.0-alpha: Awaiting Instruction</p>
+  <form id="form" hidden>
+    <input type="text" class="input-prime" id="username" value="Username"/>
+    <br/>
+    <br/>
+    <input type="text" class="input-prime" id="password" value="Password"/>
+  </form>
   <form>
     <input type="text" class="input" id="commands"/>
     <input type="reset" hidden id="resetInput"/>
   </form>
+  <p id="showOutput"></p>
 </body>
 </html>
