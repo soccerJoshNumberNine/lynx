@@ -1,7 +1,11 @@
 var commandOutput = null;
 var jar = null;
+var container = null;
 var userOutput = null;
 var activeUser = null;
+var username = null;
+var password = null;
+var signin = "You must be signed in to use Lynx. Use help for a list of commands.";
 var commands = [
   {
     input: "find_events",
@@ -58,33 +62,85 @@ var commands = [
         commandOutput += "You are also tasked with the " + jar[new Date().getDate() % 2] + ".";
 
         return commandOutput;
+      } else if (activeUser === null) {
+        return signin;
       }
+    }
+  },
+  
+  {
+    input: "find_jersey",
+    output: function () {
+      if (activeUser !== null) {
+        jar = [
+          "any",
+          "any",
+          "your navy",
+          "your pink",
+          "any",
+          "your gray",
+          "any"
+        ];
+        commandOutput = "Wear " + jar[new Date().getDay()] + " jersey.";
+        return commandOutput;
+      } else if (activeUser === null) {
+        return signin;
+      }
+    }
+  },
+  
+  {
+    input: "echo",
+    output: function () {
+      if (activeUser !== null) {
+        container = $('#commands').val();
+        jar = container.slice(container.indexOf(".") + 1);
+        commandOutput = jar;
+        return commandOutput;
+      } else if (activeUser === null) {
+        return signin;
+      }
+    }
+  },
+  
+  {
+    input: "help",
+    output: function () {
+      commandOutput = "";
+      for (i = 0; i < commands.length; i++) {
+        commandOutput += commands[i].input + "<br/>";
+      }
+      return commandOutput;
+    }
+  },
+  
+  {
+    input: "clear",
+    output: function () {
+      commandOutput = "Console cleared.";
+      return commandOutput;
     }
   },
   
   {
     input: "sign_in",
     output: function (username, password) {
-      $('#form').slideToggle(1000);
       jar = [
         {
-          username: "BL4Z3",
-          password: "json"
+          username: "soccerJoshNumberNine",
+          password: "pirlo"
         }
       ];
-      
-      $('.input-prime').keydown(function () {
-        if (event.which == 9) {
-          alert();
-          for (i = 0; i < jar.length; i++) {
-            if (document.getElementById("username").value == jar[i].username && document.getElementById("password").value == jar[i].password) {
-              activeUser = jar[i].username;
-              commandOutput = "Successfully signed in. Active user: " + jar[i].username + ".";
-              return commandOutput;
-            }
-          }
+      container = $('#commands').val();
+      username = container.slice(container.indexOf(".") + 1, container.indexOf("/"));
+      password = container.slice(container.indexOf("/") + 1);
+      for (i = 0; i < jar.length; i++) {
+        if (username == jar[i].username && password == jar[i].password) {
+          activeUser = jar[i].username;
         }
-      });
+      }
+      commandOutput = "Successfully logged in. Welcome back, " + activeUser + ".";
+      return commandOutput;
     }
   }
 ];
