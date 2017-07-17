@@ -1,0 +1,20 @@
+About Lynx
+
+
+
+Origin:
+
+Lynx was, at first, envisioned to be a chat bot that would perform similarly to artificial intelligence. As I began to make it, it was quickly obvious that even a basic AI was beyond my capabilities.
+I decided to tone it down to just be an assistant that would tell me information based on my input. Inspired by the hackery looking terminals seen in sci-fi movies, I made the black/green GUI as my first step.
+
+Now:
+
+Lynx is a basic terminal that tells me the events for the day, what jersey I have to wear to practice, and the time/day etc. The sign-in system is fun, but not secure, and the whole system is really only useful for me.
+
+For the Future:
+
+I hope to make Lynx a reminder bot that can help everyone. Using an SQL server, I hope to allow users to generate their own events that Lynx will remind them of.
+
+
+
+Lynx: Increase Productivity
