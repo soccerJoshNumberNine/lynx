@@ -139,10 +139,10 @@ var commands = [
       for (i = 0; i < jar.length; i++) {
         if (username == jar[i].username && password == jar[i].password) {
           activeUser = jar[i].username;
+	  commandOutput = 'Sucessfully logged in. Welcome back, ' + activeUser + '.';
+	  return commandOutput;
         }
       }
-      commandOutput = "Successfully logged in. Welcome back, " + activeUser + ".";
-      return commandOutput;
     }
   }
 ];
