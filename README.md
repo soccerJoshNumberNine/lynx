@@ -2,4 +2,4 @@
 
 JavaScript 'command line'. Really just assists me in remebering to do stuff and whatnot.
 
-[View License](https://soocerjoshnumbernine.github.io/lynx/license)
+[View License](https://github.com/soccerJoshNumberNine/lynx/blob/master/LICENSE)
