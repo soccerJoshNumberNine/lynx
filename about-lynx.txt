@@ -1,7 +1,5 @@
 About Lynx
 
-
-
 Origin:
 
 Lynx was, at first, envisioned to be a chat bot that would perform similarly to artificial intelligence. As I began to make it, it was quickly obvious that even a basic AI was beyond my capabilities.
@@ -14,7 +12,5 @@ Lynx is a basic terminal that tells me the events for the day, what jersey I hav
 For the Future:
 
 I hope to make Lynx a reminder bot that can help everyone. Using an SQL server, I hope to allow users to generate their own events that Lynx will remind them of.
-
-
 
 Lynx: Increase Productivity
