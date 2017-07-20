@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <title>Lynx: Increase Productivity</title>
+</head>
+<body>
+  <p>Lynx v1.0.2-alpha</p>
+  <div id="dorito" hidden>
+    <div class="content">
+      To Do:
+      <br/>
+      <br/>
+      <table>
+        <thead>
+          <tr>
+            <th>
+              Event
+            </th>
+            <th>
+              Time
+            </th>
+            <th>
+              Notes
+            </th>
+          </tr>
+        </thead>
+        <tbody id="table">      
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script>
+    var events = {
+      daily: [
+
+      ],
+
+      weekly: [
+        [
+          {
+            name: "Church",
+            time: "10:45",
+            notes: "Second Service"
+          },
+
+          {
+            name: "Code",
+            time: "Any time today",
+            notes: "None"
+          }
+        ],
+
+        [
+          {
+            name: "Code",
+            time: "Any time today",
+            notes: "None"
+          }
+        ],
+
+        [
+          {
+            name: "Soccer Practice",
+            time: "7:30",
+            notes: "Wear Navy"
+          },
+
+          {
+            name: "Code",
+            time: "Any time today",
+            notes: "None"
+          }
+        ],
+
+        [
+          {
+            name: "Vision Training",
+            time: "7:30",
+            notes: "Wear pink"
+          },
+
+          {
+            name: "Code",
+            time: "Any time today",
+            notes: "None"
+          }
+        ],
+
+        [
+          {
+            name: "Code",
+            time: "Any time today",
+            notes: "None"
+          }
+        ],
+
+        [
+          {
+            name: "Shooting & Finishing Clinic",
+            time: "7:00",
+            notes: "Last one on Friday, July 21"
+          },
+
+          {
+            name: "Soccer Practice",
+            time: "7:30",
+            notes: "Wear Gray"
+          },
+
+          {
+            name: "Code",
+            time: "Any time today",
+            notes: "None"
+          }
+        ],
+
+        [
+          {
+            name: "Code",
+            time: "Any time today",
+            notes: "None"
+          }
+        ]
+      ],
+
+      everyOtherDay: [
+        {
+          name: "Cat food and water",
+          time: "Any time today",
+          notes: "None"
+        },
+
+        {
+          name: "Kitty litter",
+          time: "Any time today",
+          notes: "None"
+        }
+      ]
+    };
+
+    var jar = null;
+    var table = null;
+
+    function createTable () {
+      table = "";
+      jar = events.daily.length;
+
+      if (jar > 0) {
+        for (i = 0; i < jar; i++) {
+          table += "<tr><td>" + events.daily[i].name + "</td><td>" + events.daily[i].time + "</td><td>" + events.daily[i].notes + "</td></tr>";
+        }
+      }
+
+      jar = events.weekly.length;
+
+      if (jar > 0) {
+        for (i = 0; i < jar; i++) {
+          table += "<tr><td>" + events.weekly[new Date().getDay()].name + "</td><td>" + events.weekly[i].time + "</td><td>" + events.weekly[i].notes + "</td></tr>";
+        }
+      }
+
+      document.getElementById("table").innerHTML = String(table);
+    }
+
+    $(document).ready(function () {
+      createTable();
+      $('#dorito').slideToggle(1000);
+    });
+  </script>
+</body>
+</html>
