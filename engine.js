@@ -94,14 +94,12 @@ var events = {
     },
   
   everyOtherDay: {
-    even: [
-      [
-        {
-          name: "Cat food and water",
-          time: "Any time today",
-          notes: "None"
-        }
-      ]
+    even:[
+      {
+        name: "Cat food and water",
+        time: "Any time today",
+        notes: "None"
+      }
     ],
     
     odd: [
@@ -153,10 +151,22 @@ function createTable () {
       break;
   }
   
-  if (jar > 0) {
-    for (i = 0; i < asdf.length; i++) {
-      table += "<tr><td>" + asdf[i].name + "</td><td>" + asdf[i].time + "</td><td>" + asdf[i].notes + "</td></tr>";
-    }
+  for (i = 0; i < asdf.length; i++) {
+    table += "<tr><td>" + asdf[i].name + "</td><td>" + asdf[i].time + "</td><td>" + asdf[i].notes + "</td></tr>";
+  }
+  
+  jar = new Date().getDay() % 2;
+  switch (jar) {
+    case 0:
+      asdf = events.everyOtherDay.even;
+      break;
+    case 1:
+      asdf = events.everyOtherDay.odd;
+      break;
+  }
+  
+  for (i = 0; i < asdf.length; i++) {
+    table += "<tr><td>" + asdf[i].name + "</td><td>" + asdf[i].time + "</td><td>" + asdf[i].notes + "</td></tr>";
   }
   
   document.getElementById("table").innerHTML = String(table);
