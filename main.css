@@ -4,10 +4,13 @@ body {
   font-family: Courier;
 }
 
-.input, .input-prime {
-  width: 100%;
-  background-color: #000;
+.content {
   border: 1px solid #0f0;
-  color: #0f0;
-  font-family: Courier;
+  padding: 5px;
+}
+
+table {
+  margin: auto;
+  text-align: center;
+  width: 100%;
 }
