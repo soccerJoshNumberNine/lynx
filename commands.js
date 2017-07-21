@@ -1,3 +1,4 @@
+// Obsolete. This file is only kept for reference later if this kind of system is reverted to.
 // Created by Joshua Smith
 // The commands here are extremely user-specific. Feel free to modify the code to better fit your needs. To view the license, see the LICENSE file.
 var commandOutput = null;
