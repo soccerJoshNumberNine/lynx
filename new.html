@@ -31,13 +31,14 @@
     </div>
   </div>
   <script>
+    var asdf = null;
     var events = {
       daily: [
 
       ],
 
-      weekly: [
-        [
+      weekly: {
+        sunday: [
           {
             name: "Church",
             time: "10:45",
@@ -51,7 +52,7 @@
           }
         ],
 
-        [
+        monday: [
           {
             name: "Code",
             time: "Any time today",
@@ -59,7 +60,7 @@
           }
         ],
 
-        [
+        tuesday: [
           {
             name: "Soccer Practice",
             time: "7:30",
@@ -73,7 +74,7 @@
           }
         ],
 
-        [
+        wednesday: [
           {
             name: "Vision Training",
             time: "7:30",
@@ -87,7 +88,7 @@
           }
         ],
 
-        [
+        thursday: [
           {
             name: "Code",
             time: "Any time today",
@@ -95,7 +96,7 @@
           }
         ],
 
-        [
+        friday: [
           {
             name: "Shooting & Finishing Clinic",
             time: "7:00",
@@ -115,14 +116,14 @@
           }
         ],
 
-        [
+        saturday: [
           {
             name: "Code",
             time: "Any time today",
             notes: "None"
           }
         ]
-      ],
+        },
 
       everyOtherDay: [
         {
@@ -152,12 +153,34 @@
         }
       }
 
-      jar = events.weekly.length;
+      jar = new Date().getDay();
+
+      switch(jar){
+        case 0:
+          asdf = events.weekly.sunday;
+          break;
+        case 1:
+          asdf = events.weekly.monday;
+          break;
+        case 2:
+          asdf = events.weekly.tuesday;
+          break;
+        case 3:
+          asdf = events.weekly.wednesday;
+          break;
+        case 4:
+          asdf = events.weekly.thursday;
+          break;
+        case 5:
+          asdf = events.weekly.friday;
+          break;
+        case 6:
+          asdf = events.weekly.saturday;
+          break;
+      }
 
       if (jar > 0) {
-        for (i = 0; i < jar; i++) {
-          table += "<tr><td>" + events.weekly[new Date().getDay()].name + "</td><td>" + events.weekly[i].time + "</td><td>" + events.weekly[i].notes + "</td></tr>";
-        }
+
       }
 
       document.getElementById("table").innerHTML = String(table);
