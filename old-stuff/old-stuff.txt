@@ -1,3 +1,5 @@
 Well, you've found your way to the old stuff of Lynx. I only saved it because I never like to delete working code.
 Lynx started as a chat bot, and when I realized my abilities were far from competent, I made it into a terminal that reminded the user of events.
 I then ditched the terminal part and made Lynx a GUI that displayed the events for the day.
+
+All code in this folder and folders in this folder is not guaranteed to work, but is still under the MIT license.
